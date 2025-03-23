@@ -1,7 +1,7 @@
 {
-  "name": "json-post-server",
-  "version": "1.0.0",
-  "description": "Simple server for handling POST JSON requests",
+  "name": "strava-cities-extractor",
+  "version": "0.1.0",
+  "description": "A Node.js API that processes Strava activity data and extracts a clean list of cities from segment efforts.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,5 +9,13 @@
   "dependencies": {
     "express": "^4.18.2",
     "js-yaml": "^4.1.0"
-  }
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch"
+  ]
 }

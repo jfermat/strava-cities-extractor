@@ -51,6 +51,18 @@ app.post('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+const HOST = '0.0.0.0';
+
+const server = app.listen(PORT, HOST, () => {
+  const addr = server.address();
+  if (typeof addr === 'string') {
+    console.log(`Server is running on ${addr}`);
+  } else {
+    console.log(`Server is running on http://${addr.address}:${addr.port}`);
+  }
+});
+
+server.on('error', (err) => {
+  console.error(err);
+  process.exit(1);
 });
